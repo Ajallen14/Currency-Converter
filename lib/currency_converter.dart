@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CurrencyConverter extends StatelessWidget {
-  const CurrencyConverter({super.key});
+  CurrencyConverter({super.key});
+
+  TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    double result = 0;
+
     final border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Color.fromRGBO(56, 100, 221, 0.5),
@@ -20,8 +24,10 @@ class CurrencyConverter extends StatelessWidget {
           "Currency Converter App",
           style: TextStyle(color: Color.fromRGBO(56, 100, 221, 1)),
         ),
+        centerTitle: true,
         backgroundColor: Color.fromARGB(56, 22, 34, 48),
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,6 +44,7 @@ class CurrencyConverter extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: textEditingController,
                 style: TextStyle(color: Color.fromARGB(255, 217, 255, 0)),
                 decoration: InputDecoration(
                   hintText: "amount in USD",
@@ -55,7 +62,9 @@ class CurrencyConverter extends StatelessWidget {
             ),
 
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                result = double.parse(textEditingController.text);
+              },
               style: ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
