@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CurrencyConverter extends StatelessWidget {
+class CurrencyConverter extends StatefulWidget {
+  State createState() => 
   CurrencyConverter({super.key});
 
   TextEditingController textEditingController = TextEditingController();
@@ -28,7 +29,7 @@ class CurrencyConverter extends StatelessWidget {
         backgroundColor: Color.fromARGB(56, 22, 34, 48),
       ),
 
-      body: Center(
+      body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,6 +70,15 @@ class CurrencyConverter extends StatelessWidget {
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
               child: Text("Convert"),
+            ),
+
+            Text(
+              result.toString() ,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(56, 100, 221, 1),
+              ),
             ),
           ],
         ),
