@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 
 class CurrencyConverter extends StatefulWidget {
-  State createState() => 
-  CurrencyConverter({super.key});
+  const CurrencyConverter({super.key});
 
+  @override
+  State<CurrencyConverter> createState() => _CurrencyConverterState();
+}
+
+class _CurrencyConverterState extends State<CurrencyConverter> {
+  double result = 0;
   TextEditingController textEditingController = TextEditingController();
+
+  void convertCurrency() {
+    final text = textEditingController.text;
+    if (text.isEmpty) return;
+
+    try {
+      final usdAmount = double.parse(text);
+      setState(() {
+        result = usdAmount * 0.85;
+      });
+    } catch (e) {
+      setState(() {
+        result = 0;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    double result = 0;
-
     final border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Color.fromRGBO(56, 100, 221, 0.5),
@@ -19,7 +38,7 @@ class CurrencyConverter extends StatefulWidget {
     );
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(0, 0, 0, 1),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
         title: Text(
           "Currency Converter App",
@@ -28,14 +47,13 @@ class CurrencyConverter extends StatefulWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(56, 22, 34, 48),
       ),
-
-      body:Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Currency Converter",
+              "USD to INR Converter",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -61,19 +79,15 @@ class CurrencyConverter extends StatefulWidget {
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
               ),
             ),
-
             TextButton(
-              onPressed: () {
-                result = double.parse(textEditingController.text);
-              },
+              onPressed: convertCurrency,
               style: ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
               child: Text("Convert"),
             ),
-
             Text(
-              result.toString() ,
+              '₹${result.toStringAsFixed(2)}',
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
