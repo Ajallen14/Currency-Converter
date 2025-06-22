@@ -10,7 +10,7 @@ A minimal Flutter application that performs basic currency conversion from USD t
 # Getting Started
 **Prerequisites**
 Make sure you have Flutter installed. If not, follow the instructions at:
-    👉 [lutter Install Guide](https://docs.flutter.dev/get-started/install)
+    👉 [Flutter Install Guide](https://docs.flutter.dev/get-started/install)
 
 # How to Run
 ```
