@@ -87,7 +87,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
               child: Text("Convert"),
             ),
             Text(
-              '₹${result.toStringAsFixed(2)}',
+              '₹ ${result.toStringAsFixed(2)}',
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
