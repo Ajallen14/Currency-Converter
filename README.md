@@ -3,8 +3,11 @@ A minimal Flutter application that performs basic currency conversion from USD t
 
 # Screenshots
 **Material Design**
+![Screenshot from 2025-06-22 12-36-44](https://github.com/user-attachments/assets/65ec85b4-02d5-4148-bd36-34da533bc6fe)
 
 **Cupertino Design**
+![Screenshot from 2025-06-22 12-39-30](https://github.com/user-attachments/assets/1d0bbd9a-dcb3-4bed-9f06-d94c0b4f2199)
+
 
 
 # Getting Started
