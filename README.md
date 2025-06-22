@@ -1,16 +1,35 @@
-# currency_converter
+# Currency Converter
+A minimal Flutter application that performs basic currency conversion from USD to INR. You can switch between Material and Cupertino design systems easily.
 
-A new Flutter project.
+# Screenshots
+**Material Design**
 
-## Getting Started
+**Cupertino Design**
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Getting Started
+**Prerequisites**
+Make sure you have Flutter installed. If not, follow the instructions at:
+    👉 [lutter Install Guide](https://docs.flutter.dev/get-started/install)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# How to Run
+```
+git clone https://github.com/your-username/currency_converter.git
+cd currency-converter
+flutter pub get
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Switching Between Material & Cupertino
+This app supports both design systems. By default, it uses Material Design.
+
+To switch:
+1. Open main.dart
+2. Change the runApp() line from:
+```
+runApp(const MyApp()); // Material Design
+```
+to
+```
+unApp(const MyCupertinoApp()); // Cupertino Design
+```
